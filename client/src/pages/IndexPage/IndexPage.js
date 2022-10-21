@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom'
+
 const IndexPage = () => {
   return (
     <main>
       <h1>Bienvendido</h1>
       <hr />
-      <a href="/galeria">Ver Galeria</a>
+      <Link to="/galeria">Ver Galeria</Link>
     </main>
   )
 }
