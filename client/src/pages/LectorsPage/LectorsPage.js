@@ -1,19 +1,31 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const LectorsPage = () => {
 
+  const [lectors, setLectors] = useState([])
+  
   const loadLectors = () => {
     fetch('http://localhost:5005/api/lectors')
       .then(res => res.json())
-      .then(allLectors => console.log(allLectors))
+      .then(allLectors => setLectors(allLectors))
   }
   
   loadLectors()
-  
+
   return (
     <main>
       <h1>Esta es la LISTA</h1>
       <hr />
+      {lectors.map(eachLector => {
+        return (
+          <article className='lector-card'>
+            <p>Codigo     :{eachLector.codigo}</p>
+            <p>Nombre     :{eachLector.nombre}</p>
+            <p>Apellidos  :{eachLector.apellidos}</p>
+          </article>
+        )
+      })}
       <Link to="/">Volver al INICIO</Link>
     </main>
   )
