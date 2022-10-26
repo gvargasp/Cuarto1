@@ -12,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" exact element={<IndexPage />} />
           <Route path="/galeria" element={<LectorsPage />} />
-          <Route path="/whaterver" element={<LectorDetails/>} />
+          <Route path="/detalles/:lector_id" element={<LectorDetails/>} />
         </Routes>
       </Router>
 

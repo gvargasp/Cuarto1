@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
+import './LectorsPage.css'
 
 const LectorsPage = () => {
 
@@ -19,11 +20,13 @@ const LectorsPage = () => {
       <hr />
       {lectors.map(eachLector => {
         return (
-          <article className='lector-card'>
-            <p>Codigo     :{eachLector.codigo}</p>
-            <p>Nombre     :{eachLector.nombre}</p>
-            <p>Apellidos  :{eachLector.apellidos}</p>
-          </article>
+          <Link to={`/detalles/${eachLector._id}`}>
+            <article className="lector-card">
+              <p>Codigo     :{eachLector.codigo}</p>
+              <p>Nombre     :{eachLector.nombre}</p>
+              <p>Apellidos  :{eachLector.apellidos}</p>
+            </article>
+          </Link>
         )
       })}
       <Link to="/">Volver al INICIO</Link>
